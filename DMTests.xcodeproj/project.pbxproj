@@ -339,6 +339,11 @@
 					};
 					E2140BEB21C0FA8300476EE4 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 1;
+							};
+						};
 					};
 					E29D218621B8001E005C51C7 = {
 						CreatedOnToolsVersion = 10.0;

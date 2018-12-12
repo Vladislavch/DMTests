@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2140BE421C0FA7D00476EE4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2140BE221C0FA7D00476EE4 /* Interface.storyboard */; };
+		E2140BE621C0FA8300476EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2140BE521C0FA8300476EE4 /* Assets.xcassets */; };
+		E2140BED21C0FA8300476EE4 /* WakeSource Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2140BEC21C0FA8300476EE4 /* WakeSource Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E2140BF221C0FA8300476EE4 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140BF121C0FA8300476EE4 /* InterfaceController.swift */; };
+		E2140BF421C0FA8300476EE4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140BF321C0FA8300476EE4 /* ExtensionDelegate.swift */; };
+		E2140BF621C0FA8300476EE4 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140BF521C0FA8300476EE4 /* NotificationController.swift */; };
+		E2140BF821C0FA8300476EE4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140BF721C0FA8300476EE4 /* ComplicationController.swift */; };
+		E2140BFA21C0FA8400476EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2140BF921C0FA8400476EE4 /* Assets.xcassets */; };
+		E2140BFF21C0FA8400476EE4 /* WakeSource.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E2140BE021C0FA7D00476EE4 /* WakeSource.app */; };
+		E2140C0A21C0FF9C00476EE4 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2140C0921C0FF9C00476EE4 /* WatchConnectivity.framework */; };
 		E29D218B21B8001E005C51C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D218A21B8001E005C51C7 /* AppDelegate.swift */; };
 		E29D218D21B8001E005C51C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D218C21B8001E005C51C7 /* ViewController.swift */; };
 		E29D219021B8001E005C51C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29D218E21B8001E005C51C7 /* Main.storyboard */; };
@@ -17,6 +27,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E2140BEE21C0FA8300476EE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E29D217F21B8001E005C51C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2140BEB21C0FA8300476EE4;
+			remoteInfo = "WakeSource Extension";
+		};
+		E2140BFD21C0FA8400476EE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E29D217F21B8001E005C51C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2140BDF21C0FA7D00476EE4;
+			remoteInfo = WakeSource;
+		};
 		E29D219C21B80024005C51C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E29D217F21B8001E005C51C7 /* Project object */;
@@ -33,7 +57,45 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E2140C0521C0FA8400476EE4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E2140BED21C0FA8300476EE4 /* WakeSource Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2140C0721C0FA8400476EE4 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E2140BFF21C0FA8400476EE4 /* WakeSource.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E2140BE021C0FA7D00476EE4 /* WakeSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2140BE321C0FA7D00476EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		E2140BE521C0FA8300476EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2140BE721C0FA8300476EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2140BEC21C0FA8300476EE4 /* WakeSource Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WakeSource Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2140BF121C0FA8300476EE4 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		E2140BF321C0FA8300476EE4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		E2140BF521C0FA8300476EE4 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		E2140BF721C0FA8300476EE4 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		E2140BF921C0FA8400476EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2140BFB21C0FA8400476EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2140BFC21C0FA8400476EE4 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		E2140C0921C0FF9C00476EE4 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		E29D218721B8001E005C51C7 /* DMTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29D218A21B8001E005C51C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E29D218C21B8001E005C51C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,10 +112,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E2140BE921C0FA8300476EE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E29D218421B8001E005C51C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2140C0A21C0FF9C00476EE4 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +144,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2140BE121C0FA7D00476EE4 /* WakeSource */ = {
+			isa = PBXGroup;
+			children = (
+				E2140BE221C0FA7D00476EE4 /* Interface.storyboard */,
+				E2140BE521C0FA8300476EE4 /* Assets.xcassets */,
+				E2140BE721C0FA8300476EE4 /* Info.plist */,
+			);
+			path = WakeSource;
+			sourceTree = "<group>";
+		};
+		E2140BF021C0FA8300476EE4 /* WakeSource Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E2140BF321C0FA8300476EE4 /* ExtensionDelegate.swift */,
+				E2140BF121C0FA8300476EE4 /* InterfaceController.swift */,
+				E2140BF521C0FA8300476EE4 /* NotificationController.swift */,
+				E2140BF721C0FA8300476EE4 /* ComplicationController.swift */,
+				E2140BF921C0FA8400476EE4 /* Assets.xcassets */,
+				E2140BFB21C0FA8400476EE4 /* Info.plist */,
+				E2140BFC21C0FA8400476EE4 /* PushNotificationPayload.apns */,
+			);
+			path = "WakeSource Extension";
+			sourceTree = "<group>";
+		};
+		E2140C0821C0FF9C00476EE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2140C0921C0FF9C00476EE4 /* WatchConnectivity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E29D217E21B8001E005C51C7 = {
 			isa = PBXGroup;
 			children = (
 				E29D218921B8001E005C51C7 /* DMTests */,
 				E29D219E21B80024005C51C7 /* DMTestsTests */,
 				E29D21A921B80024005C51C7 /* DMTestsUITests */,
+				E2140BE121C0FA7D00476EE4 /* WakeSource */,
+				E2140BF021C0FA8300476EE4 /* WakeSource Extension */,
 				E29D218821B8001E005C51C7 /* Products */,
+				E2140C0821C0FF9C00476EE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +195,8 @@
 				E29D218721B8001E005C51C7 /* DMTests.app */,
 				E29D219B21B80024005C51C7 /* DMTestsTests.xctest */,
 				E29D21A621B80024005C51C7 /* DMTestsUITests.xctest */,
+				E2140BE021C0FA7D00476EE4 /* WakeSource.app */,
+				E2140BEC21C0FA8300476EE4 /* WakeSource Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +235,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E2140BDF21C0FA7D00476EE4 /* WakeSource */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2140C0621C0FA8400476EE4 /* Build configuration list for PBXNativeTarget "WakeSource" */;
+			buildPhases = (
+				E2140BDE21C0FA7D00476EE4 /* Resources */,
+				E2140C0521C0FA8400476EE4 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2140BEF21C0FA8300476EE4 /* PBXTargetDependency */,
+			);
+			name = WakeSource;
+			productName = WakeSource;
+			productReference = E2140BE021C0FA7D00476EE4 /* WakeSource.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		E2140BEB21C0FA8300476EE4 /* WakeSource Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2140C0421C0FA8400476EE4 /* Build configuration list for PBXNativeTarget "WakeSource Extension" */;
+			buildPhases = (
+				E2140BE821C0FA8300476EE4 /* Sources */,
+				E2140BE921C0FA8300476EE4 /* Frameworks */,
+				E2140BEA21C0FA8300476EE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WakeSource Extension";
+			productName = "WakeSource Extension";
+			productReference = E2140BEC21C0FA8300476EE4 /* WakeSource Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		E29D218621B8001E005C51C7 /* DMTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E29D21AF21B80024005C51C7 /* Build configuration list for PBXNativeTarget "DMTests" */;
@@ -135,10 +276,12 @@
 				E29D218321B8001E005C51C7 /* Sources */,
 				E29D218421B8001E005C51C7 /* Frameworks */,
 				E29D218521B8001E005C51C7 /* Resources */,
+				E2140C0721C0FA8400476EE4 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E2140BFE21C0FA8400476EE4 /* PBXTargetDependency */,
 			);
 			name = DMTests;
 			productName = DMTests;
@@ -187,10 +330,16 @@
 		E29D217F21B8001E005C51C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Vladyslav Yemets";
 				TargetAttributes = {
+					E2140BDF21C0FA7D00476EE4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					E2140BEB21C0FA8300476EE4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					E29D218621B8001E005C51C7 = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
@@ -225,11 +374,30 @@
 				E29D218621B8001E005C51C7 /* DMTests */,
 				E29D219A21B80024005C51C7 /* DMTestsTests */,
 				E29D21A521B80024005C51C7 /* DMTestsUITests */,
+				E2140BDF21C0FA7D00476EE4 /* WakeSource */,
+				E2140BEB21C0FA8300476EE4 /* WakeSource Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E2140BDE21C0FA7D00476EE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2140BE621C0FA8300476EE4 /* Assets.xcassets in Resources */,
+				E2140BE421C0FA7D00476EE4 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2140BEA21C0FA8300476EE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2140BFA21C0FA8400476EE4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E29D218521B8001E005C51C7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,6 +425,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E2140BE821C0FA8300476EE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2140BF621C0FA8300476EE4 /* NotificationController.swift in Sources */,
+				E2140BF821C0FA8300476EE4 /* ComplicationController.swift in Sources */,
+				E2140BF421C0FA8300476EE4 /* ExtensionDelegate.swift in Sources */,
+				E2140BF221C0FA8300476EE4 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E29D218321B8001E005C51C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +464,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E2140BEF21C0FA8300476EE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2140BEB21C0FA8300476EE4 /* WakeSource Extension */;
+			targetProxy = E2140BEE21C0FA8300476EE4 /* PBXContainerItemProxy */;
+		};
+		E2140BFE21C0FA8400476EE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2140BDF21C0FA7D00476EE4 /* WakeSource */;
+			targetProxy = E2140BFD21C0FA8400476EE4 /* PBXContainerItemProxy */;
+		};
 		E29D219D21B80024005C51C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E29D218621B8001E005C51C7 /* DMTests */;
@@ -298,6 +487,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E2140BE221C0FA7D00476EE4 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2140BE321C0FA7D00476EE4 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		E29D218E21B8001E005C51C7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -317,6 +514,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E2140C0021C0FA8400476EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N4U68DVL3B;
+				IBSC_MODULE = WakeSource_Extension;
+				INFOPLIST_FILE = WakeSource/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = C.DMTests.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		E2140C0121C0FA8400476EE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N4U68DVL3B;
+				IBSC_MODULE = WakeSource_Extension;
+				INFOPLIST_FILE = WakeSource/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = C.DMTests.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		E2140C0221C0FA8400476EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N4U68DVL3B;
+				INFOPLIST_FILE = "WakeSource Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = C.DMTests.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		E2140C0321C0FA8400476EE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N4U68DVL3B;
+				INFOPLIST_FILE = "WakeSource Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = C.DMTests.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
 		E29D21AD21B80024005C51C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -552,6 +831,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E2140C0421C0FA8400476EE4 /* Build configuration list for PBXNativeTarget "WakeSource Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2140C0221C0FA8400476EE4 /* Debug */,
+				E2140C0321C0FA8400476EE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2140C0621C0FA8400476EE4 /* Build configuration list for PBXNativeTarget "WakeSource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2140C0021C0FA8400476EE4 /* Debug */,
+				E2140C0121C0FA8400476EE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E29D218221B8001E005C51C7 /* Build configuration list for PBXProject "DMTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

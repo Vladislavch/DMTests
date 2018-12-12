@@ -12,6 +12,10 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet var table: WKInterfaceTable!
+    @IBOutlet var buttonPing: WKInterfaceButton!
+    @IBOutlet var buttonClear: WKInterfaceButton!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -32,4 +36,12 @@ class InterfaceController: WKInterfaceController {
         
     }
 
+    @IBAction func onPing() {
+        
+    }
+    
+    @IBAction func onClear() {
+        
+    }
+    
 }

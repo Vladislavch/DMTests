@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
@@ -13,9 +14,45 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WakeSource" customModuleProvider="target">
                     <items>
-                        <label width="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="center" id="Oh8-xP-IBJ"/>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Button" id="M8G-ZL-r9R"/>
+                        <group width="1" height="0.69999999999999996" alignment="left" id="7WT-zm-HYY">
+                            <items>
+                                <table alignment="left" id="6WB-qb-kSV">
+                                    <items>
+                                        <tableRow id="E5v-Sa-sVh">
+                                            <group key="rootItem" width="1" alignment="left" id="PJP-Ym-ULq"/>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                        <group width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" id="5fQ-hq-fxc">
+                            <items>
+                                <group width="0.5" alignment="left" id="rsL-hH-M8D">
+                                    <items>
+                                        <button width="1" alignment="left" title="Ping" id="M8G-ZL-r9R">
+                                            <connections>
+                                                <action selector="onPing" destination="AgC-eL-Hgc" id="IIq-YV-xcq"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="0.5" alignment="left" id="Zox-1k-Uql">
+                                    <items>
+                                        <button width="1" alignment="left" title="Clear" id="m2p-cd-Eqq">
+                                            <connections>
+                                                <action selector="onClear" destination="AgC-eL-Hgc" id="ZkJ-uc-STP"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
                     </items>
+                    <connections>
+                        <outlet property="buttonClear" destination="m2p-cd-Eqq" id="0hZ-N6-L8d"/>
+                        <outlet property="buttonPing" destination="M8G-ZL-r9R" id="5Xc-CL-EVd"/>
+                        <outlet property="table" destination="6WB-qb-kSV" id="m0B-o9-5XF"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>

@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var rootView: CustomView {
+        return view as! CustomView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
 
 }
 
+
+final class CustomView: UIView {
+    
+    @IBOutlet weak var textViewLog: UITextView!
+    
+}

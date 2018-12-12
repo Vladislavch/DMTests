@@ -16,9 +16,14 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var buttonPing: WKInterfaceButton!
     @IBOutlet var buttonClear: WKInterfaceButton!
     
+    private var events = [String]()
+    
+    // MARK: - Overriden
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
+        let rowType = String(describing: EventTableRow.self)
+        table.setRowTypes([rowType])
         // Configure interface objects here.
     }
     
@@ -36,12 +41,43 @@ class InterfaceController: WKInterfaceController {
         
     }
 
+    // MARK: - Table methods
+    
+    // MARK: - Private
+    
+    private func reloadTable() {
+        let rowType = String(describing: EventTableRow.self)
+        table.setNumberOfRows(events.count, withRowType: rowType)
+        for index in 0..<table.numberOfRows {
+            let row = table.rowController(at: index) as? EventTableRow
+            let event = events[index]
+            row?.labelEvent.setText(event)
+        }
+    }
+    
+    private func addEvent(_ event: String) {
+        events.append(event)
+        reloadTable()
+    }
+    
+    private func clearTable() {
+        events.removeAll()
+        reloadTable()
+    }
+    
+    // MARK: - Actions
+    
     @IBAction func onPing() {
-        
+        addEvent("Button tapped")
     }
     
     @IBAction func onClear() {
-        
+        clearTable()
     }
     
+}
+
+
+final class EventTableRow: NSObject {
+    @IBOutlet weak var labelEvent: WKInterfaceLabel!
 }

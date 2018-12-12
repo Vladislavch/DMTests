@@ -14,17 +14,6 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WakeSource" customModuleProvider="target">
                     <items>
-                        <group width="1" height="0.69999999999999996" alignment="left" id="7WT-zm-HYY">
-                            <items>
-                                <table alignment="left" id="6WB-qb-kSV">
-                                    <items>
-                                        <tableRow id="E5v-Sa-sVh">
-                                            <group key="rootItem" width="1" alignment="left" id="PJP-Ym-ULq"/>
-                                        </tableRow>
-                                    </items>
-                                </table>
-                            </items>
-                        </group>
                         <group width="1" height="0.29999999999999999" alignment="left" verticalAlignment="bottom" id="5fQ-hq-fxc">
                             <items>
                                 <group width="0.5" alignment="left" id="rsL-hH-M8D">
@@ -45,6 +34,24 @@
                                         </button>
                                     </items>
                                 </group>
+                            </items>
+                        </group>
+                        <group width="1" height="0.69999999999999996" alignment="left" id="7WT-zm-HYY">
+                            <items>
+                                <table alignment="left" id="6WB-qb-kSV">
+                                    <items>
+                                        <tableRow identifier="EventTableRow" id="E5v-Sa-sVh" customClass="EventTableRow" customModule="WakeSource_Extension">
+                                            <group key="rootItem" width="1" alignment="left" id="PJP-Ym-ULq">
+                                                <items>
+                                                    <label width="1" height="1" alignment="left" text="Label" id="Sn2-nf-9Xr"/>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="labelEvent" destination="Sn2-nf-9Xr" id="2sw-a0-ncd"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
                             </items>
                         </group>
                     </items>

@@ -1,5 +1,5 @@
 //
-//  SessionWrapper.swift
+//  MessagesReceiver.swift
 //  DMTests
 //
 //  Created by Vladyslav Yemets on 12/13/18.
@@ -9,71 +9,16 @@
 import Foundation
 import WatchConnectivity
 
-protocol SessionWrapperProtocol {
-    
+protocol WatchSessionDelegateProtocol {
     associatedtype MessageType
-    
-    var isSupported: Bool { get }
-    var isActived: Bool { get }
-    
-    var answerReceived: (MessageType?, Error?) -> (Void) { get set }
-    
-    func activate()
+    var messageReceived: ((MessageType) -> (Void))? { get set }
 }
 
-
-fileprivate struct Keys {
-    static let kMessageObjectKey = "kMessageObjectKey"
-}
-
-
-final class SessionWrapper<T>: NSObject, SessionWrapperProtocol, WCSessionDelegate {
+final class WatchSessionDelegate<T>: NSObject, WatchSessionDelegateProtocol, WCSessionDelegate {
     
     typealias MessageType = T
     
-    private let session = WCSession.default
-    
-    var answerReceived: (MessageType?, Error?) -> (Void) = {_,_ in }
-    
-    var isSupported: Bool {
-        return WCSession.isSupported()
-    }
-    
-    var isActived: Bool {
-        return session.activationState == .activated
-    }
-    
-    override init() {
-        super.init()
-        session.delegate = self
-    }
-    
-    // MARK: - SessionWrapperProtocol
-    
-    func activate() {
-        if !isActived {
-            session.activate()
-        }
-    }
-    
-    func sendMessage(_ message: MessageType) {
-        session.sendMessage([Keys.kMessageObjectKey : message], replyHandler: { [weak self] answer in
-            if let str = answer[Keys.kMessageObjectKey] as? MessageType {
-                self?.answerReceived(str, nil)
-            } else {
-                self?.answerReceived(nil, NSError())
-            }
-        }) { [weak self] (error) in
-            self?.answerReceived(nil, error)
-        }
-    }
-    
-    
-    // MARK: - Public
-    
-    var isBackgroundMessagingEnabled: Bool {
-        return isActived && session.isWatchAppInstalled && session.isPaired
-    }
+    var messageReceived: ((T) -> (Void))?
     
     
     // MARK: - WCSession Activation
@@ -85,7 +30,7 @@ final class SessionWrapper<T>: NSObject, SessionWrapperProtocol, WCSessionDelega
     func sessionDidBecomeInactive(_ session: WCSession) {
         
     }
-
+    
     func sessionDidDeactivate(_ session: WCSession) {
         
     }
@@ -105,9 +50,11 @@ final class SessionWrapper<T>: NSObject, SessionWrapperProtocol, WCSessionDelega
     // MARK: - WCSession Interaction
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        
+        if let object = message[Keys.kMessageObjectKey] as? MessageType {
+            messageReceived?(object)
+        }
     }
-
+    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
     }
@@ -115,7 +62,7 @@ final class SessionWrapper<T>: NSObject, SessionWrapperProtocol, WCSessionDelega
     func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
         
     }
-
+    
     func session(_ session: WCSession, didReceiveMessageData messageData: Data, replyHandler: @escaping (Data) -> Void) {
         
     }
@@ -142,6 +89,4 @@ final class SessionWrapper<T>: NSObject, SessionWrapperProtocol, WCSessionDelega
     func session(_ session: WCSession, didReceive file: WCSessionFile) {
         
     }
-    
 }
-

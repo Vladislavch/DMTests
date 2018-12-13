@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+//import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController {
@@ -17,6 +18,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var buttonClear: WKInterfaceButton!
     
     private var events = [String]()
+//    private var sessionDelegate: WatchSessionDelegate<String>?
     
     // MARK: - Overriden
     
@@ -24,7 +26,11 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         let rowType = String(describing: EventTableRow.self)
         table.setRowTypes([rowType])
-        // Configure interface objects here.
+        
+//        sessionDelegate = WCSession.default.delegate as? WatchSessionDelegate<String>
+//        sessionDelegate?.messageReceived = { [weak self] message in
+//            self?.addEvent(message)
+//        }
     }
     
     override func willActivate() {

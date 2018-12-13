@@ -10,6 +10,14 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
+//    private let delegate = WatchSessionDelegate<String>()
+    
+    override init() {
+        super.init()
+//        WCSession.default.delegate = self.delegate
+//        WCSession.default.activate()
+    }
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
     }
@@ -70,5 +78,5 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
-
+    
 }

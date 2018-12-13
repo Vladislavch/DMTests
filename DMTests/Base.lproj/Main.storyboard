@@ -18,8 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6f-mW-3Sk">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="u4G-IT-C5c"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onSend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="urB-cf-kfP"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aax-5V-6Lb">
+                                <rect key="frame" x="16" y="20" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4Rz-l8-Xyf"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Log" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="59u-1Z-Lcw">
-                                <rect key="frame" x="16" y="20" width="348" height="627"/>
+                                <rect key="frame" x="16" y="58" width="348" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -28,19 +47,27 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="59u-1Z-Lcw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3Rp-c4-b6W"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="59u-1Z-Lcw" secondAttribute="bottom" constant="20" id="fsz-ZQ-Ooc"/>
-                            <constraint firstItem="59u-1Z-Lcw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hrO-fx-sfA"/>
+                            <constraint firstItem="l6f-mW-3Sk" firstAttribute="top" secondItem="59u-1Z-Lcw" secondAttribute="bottom" constant="8" id="75i-xL-0Gr"/>
+                            <constraint firstItem="59u-1Z-Lcw" firstAttribute="top" secondItem="aax-5V-6Lb" secondAttribute="bottom" constant="8" id="7ad-ok-MwK"/>
+                            <constraint firstItem="aax-5V-6Lb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7uO-eN-mHD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l6f-mW-3Sk" secondAttribute="trailing" constant="16" id="9o0-pW-4lZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l6f-mW-3Sk" secondAttribute="bottom" constant="20" id="Aof-Al-o6P"/>
+                            <constraint firstItem="l6f-mW-3Sk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Caa-YG-Xhl"/>
+                            <constraint firstItem="aax-5V-6Lb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="K5X-wh-aq7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aax-5V-6Lb" secondAttribute="trailing" constant="16" id="qyj-il-STe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="59u-1Z-Lcw" secondAttribute="trailing" constant="11" id="vGA-HB-EUT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
+                            <outlet property="buttonSend" destination="l6f-mW-3Sk" id="LTi-TL-s2P"/>
+                            <outlet property="textFieldMessage" destination="aax-5V-6Lb" id="Oa7-ma-3lq"/>
                             <outlet property="textViewLog" destination="59u-1Z-Lcw" id="L5H-6s-EDe"/>
                         </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="92" y="133.5832083958021"/>
+            <point key="canvasLocation" x="36" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>

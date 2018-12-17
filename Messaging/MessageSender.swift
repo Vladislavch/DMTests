@@ -27,6 +27,7 @@ final class MessageSender<T>: NSObject, MessageSenderProtocol {
     typealias MessageType = T
     
     private let session = WCSession.default
+    private let delegate = WatchSessionDelegate<MessageType>()
     
     var isSupported: Bool {
         return WCSession.isSupported()
@@ -38,6 +39,7 @@ final class MessageSender<T>: NSObject, MessageSenderProtocol {
     
     override init() {
         super.init()
+        session.delegate = self.delegate
     }
     
     

@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private var sender: MessageSender<String>?
+    private var messageSender: MessageSender<String>?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -26,18 +26,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sender = MessageSender<String>()
+        messageSender = MessageSender<String>()
+        messageSender?.activate()
     }
 
-    func updateLog(_ text: String) {
-        let newText = (rootView.textViewLog.text ?? "").appending("\n /(text)")
+    func updateLogWith(event: String) {
+        let newText = (rootView.textViewLog.text ?? "").appending("\n \(event)")
         rootView.textViewLog.text = newText
     }
     
     @IBAction func onSend(_ sender: Any) {
         if let message = rootView.textFieldMessage.text {
-            self.sender?.sendMessage(message, onError: { [weak self] error in
-                self?.updateLog(error.localizedDescription)
+            updateLogWith(event: "Send: \(message)")
+            messageSender?.sendMessage(message, onError: { [weak self] error in
+                DispatchQueue.main.async {
+                    self?.updateLogWith(event: error.localizedDescription)
+                }
             })
         }
     }
@@ -45,10 +49,20 @@ class ViewController: UIViewController {
 }
 
 
-final class CustomView: UIView {
+final class CustomView: UIView, UITextFieldDelegate {
     
     @IBOutlet weak var textViewLog: UITextView!
     @IBOutlet weak var textFieldMessage: UITextField!
     @IBOutlet weak var buttonSend: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textFieldMessage.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }

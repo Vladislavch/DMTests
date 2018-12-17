@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
 
     func updateLogWith(event: String) {
-        let newText = (rootView.textViewLog.text ?? "").appending("\n \(event)")
+        let newText = "\(event)\n ".appending((rootView.textViewLog.text ?? ""))
         rootView.textViewLog.text = newText
     }
     

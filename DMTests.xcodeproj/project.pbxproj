@@ -10,6 +10,7 @@
 		E209E9E321C79C9C00F846AB /* WatchSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140C1521C2ACCC00476EE4 /* WatchSessionDelegate.swift */; };
 		E209E9E421C79D0C00F846AB /* MessagingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140C1821C2AF5A00476EE4 /* MessagingKeys.swift */; };
 		E209E9E521C79D1000F846AB /* MessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140C1321C29EA600476EE4 /* MessageSender.swift */; };
+		E209E9E721C7BF1C00F846AB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209E9E621C7BF1C00F846AB /* CameraViewController.swift */; };
 		E2140BE421C0FA7D00476EE4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2140BE221C0FA7D00476EE4 /* Interface.storyboard */; };
 		E2140BE621C0FA8300476EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2140BE521C0FA8300476EE4 /* Assets.xcassets */; };
 		E2140BED21C0FA8300476EE4 /* WakeSource Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2140BEC21C0FA8300476EE4 /* WakeSource Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -89,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E209E9E621C7BF1C00F846AB /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		E2140BE021C0FA7D00476EE4 /* WakeSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2140BE321C0FA7D00476EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		E2140BE521C0FA8300476EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				E29D218A21B8001E005C51C7 /* AppDelegate.swift */,
 				E29D218C21B8001E005C51C7 /* ViewController.swift */,
+				E209E9E621C7BF1C00F846AB /* CameraViewController.swift */,
 				E29D218E21B8001E005C51C7 /* Main.storyboard */,
 				E29D219121B80024005C51C7 /* Assets.xcassets */,
 				E29D219321B80024005C51C7 /* LaunchScreen.storyboard */,
@@ -473,6 +476,7 @@
 				E29D218D21B8001E005C51C7 /* ViewController.swift in Sources */,
 				E2140C1621C2ACCC00476EE4 /* WatchSessionDelegate.swift in Sources */,
 				E29D218B21B8001E005C51C7 /* AppDelegate.swift in Sources */,
+				E209E9E721C7BF1C00F846AB /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

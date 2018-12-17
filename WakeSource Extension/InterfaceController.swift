@@ -18,7 +18,9 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var buttonClear: WKInterfaceButton!
     
     private var events = [String]()
+    private var messageSender: MessageSender<String>?
     private var sessionDelegate: WatchSessionDelegate<String>?
+    
     
     // MARK: - Overriden
     
@@ -27,9 +29,12 @@ class InterfaceController: WKInterfaceController {
         let rowType = String(describing: EventTableRow.self)
         table.setRowTypes([rowType])
         
-        sessionDelegate = WCSession.default.delegate as? WatchSessionDelegate<String>
-        sessionDelegate?.messageReceived = { [weak self] message in
-            self?.addEvent(message)
+        if let sessionDelegate = WCSession.default.delegate as? WatchSessionDelegate<String> {
+            self.messageSender = MessageSender(delegate: sessionDelegate)
+            self.sessionDelegate = sessionDelegate
+            self.sessionDelegate?.messageReceived = { [weak self] message in
+                self?.addEvent(message)
+            }
         }
     }
     
@@ -67,14 +72,22 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func clearTable() {
+        messageSender?.sendMessage("Event queue has been cleared") { error in
+            print(error)
+        }
         events.removeAll()
         reloadTable()
     }
     
+    
     // MARK: - Actions
     
     @IBAction func onPing() {
-        addEvent("Button tapped")
+        let message = "Ping from watches"
+        addEvent(message)
+        messageSender?.sendMessage(message) { error in
+            print(error)
+        }
     }
     
     @IBAction func onClear() {

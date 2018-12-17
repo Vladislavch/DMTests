@@ -28,6 +28,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         messageSender = MessageSender<String>()
         messageSender?.activate()
+        messageSender?.sessionDelegate.messageReceived = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.updateLogWith(event: message)
+            }
+        }
     }
 
     func updateLogWith(event: String) {

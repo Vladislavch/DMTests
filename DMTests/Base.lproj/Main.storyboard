@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tJ7-hd-L5K">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="fC3-1p-vXa">
+            <objects>
+                <navigationController id="tJ7-hd-L5K" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0i0-WC-SgH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cri-5U-saS" kind="relationship" relationship="rootViewController" id="lNx-Ol-ivT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t7I-uM-4Hb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-484" y="112"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -61,10 +77,42 @@
                             <outlet property="textViewLog" destination="59u-1Z-Lcw" id="L5H-6s-EDe"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="y0i-46-ABQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="118.29085457271366"/>
+            <point key="canvasLocation" x="522" y="112"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="13O-ca-xdm">
+            <objects>
+                <viewController id="cri-5U-saS" customClass="CameraViewController" customModule="DMTests" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V8i-BT-3TG" customClass="CameraView" customModule="DMTests" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqP-30-xHQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.64705882349999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qCH-vO-YtJ" firstAttribute="bottom" secondItem="JqP-30-xHQ" secondAttribute="bottom" id="DDK-CB-QGc"/>
+                            <constraint firstItem="JqP-30-xHQ" firstAttribute="top" secondItem="qCH-vO-YtJ" secondAttribute="top" id="Eh1-oe-7zK"/>
+                            <constraint firstItem="JqP-30-xHQ" firstAttribute="leading" secondItem="qCH-vO-YtJ" secondAttribute="leading" id="pLN-HP-a57"/>
+                            <constraint firstItem="qCH-vO-YtJ" firstAttribute="trailing" secondItem="JqP-30-xHQ" secondAttribute="trailing" id="rdi-Sb-GCl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qCH-vO-YtJ"/>
+                        <connections>
+                            <outlet property="previewPlace" destination="JqP-30-xHQ" id="rO6-zE-Dg3"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="mLw-Qi-qcC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kcc-b6-6UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="521" y="797"/>
         </scene>
     </scenes>
 </document>

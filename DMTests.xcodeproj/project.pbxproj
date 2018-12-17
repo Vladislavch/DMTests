@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E209E9E321C79C9C00F846AB /* WatchSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140C1521C2ACCC00476EE4 /* WatchSessionDelegate.swift */; };
+		E209E9E421C79D0C00F846AB /* MessagingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140C1821C2AF5A00476EE4 /* MessagingKeys.swift */; };
+		E209E9E521C79D1000F846AB /* MessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140C1321C29EA600476EE4 /* MessageSender.swift */; };
 		E2140BE421C0FA7D00476EE4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2140BE221C0FA7D00476EE4 /* Interface.storyboard */; };
 		E2140BE621C0FA8300476EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2140BE521C0FA8300476EE4 /* Assets.xcassets */; };
 		E2140BED21C0FA8300476EE4 /* WakeSource Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2140BEC21C0FA8300476EE4 /* WakeSource Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -451,10 +454,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E209E9E421C79D0C00F846AB /* MessagingKeys.swift in Sources */,
 				E2140BF621C0FA8300476EE4 /* NotificationController.swift in Sources */,
 				E2140BF821C0FA8300476EE4 /* ComplicationController.swift in Sources */,
+				E209E9E521C79D1000F846AB /* MessageSender.swift in Sources */,
 				E2140BF421C0FA8300476EE4 /* ExtensionDelegate.swift in Sources */,
 				E2140BF221C0FA8300476EE4 /* InterfaceController.swift in Sources */,
+				E209E9E321C79C9C00F846AB /* WatchSessionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

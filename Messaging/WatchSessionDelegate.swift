@@ -27,6 +27,8 @@ final class WatchSessionDelegate<T>: NSObject, WatchSessionDelegateProtocol, WCS
         
     }
     
+    #if os(iOS)
+    
     func sessionDidBecomeInactive(_ session: WCSession) {
         
     }
@@ -41,6 +43,8 @@ final class WatchSessionDelegate<T>: NSObject, WatchSessionDelegateProtocol, WCS
     func sessionWatchStateDidChange(_ session: WCSession) {
         
     }
+    
+    #endif
     
     func sessionReachabilityDidChange(_ session: WCSession) {
         

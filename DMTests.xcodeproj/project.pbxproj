@@ -11,6 +11,9 @@
 		E209E9E421C79D0C00F846AB /* MessagingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140C1821C2AF5A00476EE4 /* MessagingKeys.swift */; };
 		E209E9E521C79D1000F846AB /* MessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2140C1321C29EA600476EE4 /* MessageSender.swift */; };
 		E209E9E721C7BF1C00F846AB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209E9E621C7BF1C00F846AB /* CameraViewController.swift */; };
+		E209E9EA21C7FD5200F846AB /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209E9E921C7FD5200F846AB /* Camera.swift */; };
+		E209E9EC21C7FD5B00F846AB /* CapturingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209E9EB21C7FD5B00F846AB /* CapturingSettings.swift */; };
+		E209E9EE21C7FE8000F846AB /* CaptureSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209E9ED21C7FE8000F846AB /* CaptureSettingsViewController.swift */; };
 		E2140BE421C0FA7D00476EE4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2140BE221C0FA7D00476EE4 /* Interface.storyboard */; };
 		E2140BE621C0FA8300476EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2140BE521C0FA8300476EE4 /* Assets.xcassets */; };
 		E2140BED21C0FA8300476EE4 /* WakeSource Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2140BEC21C0FA8300476EE4 /* WakeSource Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -91,6 +94,9 @@
 
 /* Begin PBXFileReference section */
 		E209E9E621C7BF1C00F846AB /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		E209E9E921C7FD5200F846AB /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		E209E9EB21C7FD5B00F846AB /* CapturingSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturingSettings.swift; sourceTree = "<group>"; };
+		E209E9ED21C7FE8000F846AB /* CaptureSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSettingsViewController.swift; sourceTree = "<group>"; };
 		E2140BE021C0FA7D00476EE4 /* WakeSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WakeSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2140BE321C0FA7D00476EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		E2140BE521C0FA8300476EE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +161,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E209E9E821C7FD4400F846AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E209E9E921C7FD5200F846AB /* Camera.swift */,
+				E209E9EB21C7FD5B00F846AB /* CapturingSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E2140BE121C0FA7D00476EE4 /* WakeSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,8 +241,10 @@
 		E29D218921B8001E005C51C7 /* DMTests */ = {
 			isa = PBXGroup;
 			children = (
+				E209E9E821C7FD4400F846AB /* Models */,
 				E29D218A21B8001E005C51C7 /* AppDelegate.swift */,
 				E29D218C21B8001E005C51C7 /* ViewController.swift */,
+				E209E9ED21C7FE8000F846AB /* CaptureSettingsViewController.swift */,
 				E209E9E621C7BF1C00F846AB /* CameraViewController.swift */,
 				E29D218E21B8001E005C51C7 /* Main.storyboard */,
 				E29D219121B80024005C51C7 /* Assets.xcassets */,
@@ -471,11 +488,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E209E9EE21C7FE8000F846AB /* CaptureSettingsViewController.swift in Sources */,
 				E2140C1421C29EA600476EE4 /* MessageSender.swift in Sources */,
+				E209E9EC21C7FD5B00F846AB /* CapturingSettings.swift in Sources */,
 				E2140C1921C2AF5A00476EE4 /* MessagingKeys.swift in Sources */,
 				E29D218D21B8001E005C51C7 /* ViewController.swift in Sources */,
 				E2140C1621C2ACCC00476EE4 /* WatchSessionDelegate.swift in Sources */,
 				E29D218B21B8001E005C51C7 /* AppDelegate.swift in Sources */,
+				E209E9EA21C7FD5200F846AB /* Camera.swift in Sources */,
 				E209E9E721C7BF1C00F846AB /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
